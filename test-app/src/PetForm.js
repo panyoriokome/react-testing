@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 function PetForm(props) {
-  const [name, setName] = useState()
-  const [species, setSpecies] = useState()
-  const [age, setAge] = useState()
+  const [name, setName] = useState("")
+  const [species, setSpecies] = useState("")
+  const [age, setAge] = useState("")
   
   function handleSubmit(e) {
     e.preventDefault()
