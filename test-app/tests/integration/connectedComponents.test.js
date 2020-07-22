@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react'
+import { render, fireEvent, screen, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
 import App from '../../src/App';
@@ -26,5 +26,19 @@ describe("Test for Connected Components", () => {
 
     // Todo‚ª’Ç‰Á‚³‚ê‚Ä‚¢‚é‚±‚Æ‚ðŠm”F
     expect(screen.getByText(textMessage)).toBeDefined()
+  })
+
+
+  test("call zen api", async () => {
+    const textMessage = 'sakata is a dog and is 3 years old.'
+    const {} = render(
+      <App />
+    )
+
+    
+    await waitFor(() => {
+      expect(screen.getByTestId('Zen')).toHaveTextContent()
+    })
+    screen.debug()
   })
 })

@@ -5,6 +5,7 @@ import TimeArea from './TimeArea'
 import Pet from './Pet'
 import PetForm from './PetForm'
 import Footer from './Footer.js'
+import ZenText from './ZenText'
 
 function App() {
   const [pets, setPets] = useState([])
@@ -26,6 +27,7 @@ function App() {
       <Header />
       <LikeArea />
       <TimeArea />
+      <ZenText />
       <PetForm setPets={setPets} />
       <ul>
         {pets.map(pet => <Pet setPets={setPets} id={pet.id} name={pet.name} species={pet.species} age={pet.age} key={pet.id} />)}
