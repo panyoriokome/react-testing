@@ -5,7 +5,7 @@ import '@testing-library/jest-dom'
 import App from '../../src/App';
 
 describe("Test for Connected Components", () => {
-  test("add todo", () => {
+  test("ToDoを追加し、追加したTodoが表示されていることを確認", () => {
     const textMessage = 'sakata is a dog and is 3 years old.'
     const {} = render(
       <App />
@@ -28,16 +28,14 @@ describe("Test for Connected Components", () => {
     expect(screen.getByText(textMessage)).toBeDefined()
   })
 
-
-  test("call zen api", async () => {
+  test("GitHubのZenAPIを呼んで結果が表示されることを確認する", async () => {
     const textMessage = 'sakata is a dog and is 3 years old.'
     const {} = render(
       <App />
     )
-
     
     await waitFor(() => {
-      expect(screen.getByTestId('Zen')).toHaveTextContent()
+      expect(screen.getByTestId('Zen')).toBeDefined()
     })
     screen.debug()
   })

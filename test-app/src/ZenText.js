@@ -18,9 +18,16 @@ function ZenText() {
 
   return (
     <div>
-      <h3>今日の禅</h3>
-      <p data-testid="Zen">{zen}</p>
+      {zen && 
+        <>
+        <h3>今日の禅</h3>
+        <p data-testid="Zen">{zen}</p>
+        </>
+      }
     </div>
+    
+    
+    
   )
 }
 
